@@ -1,0 +1,19 @@
+<div style="font-family:Segoe UI,Roboto,sans-serif;color:#143028;">
+  <div style="background:#0f3d2e;color:#f4faf6;border-radius:12px;padding:14px 16px;margin-bottom:10px;">
+    <div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.85;">Central de monitoramento ambiental</div>
+    <div style="font-size:26px;font-weight:700;line-height:1.2;">Cocó Alerta</div>
+    <div style="font-size:14px;margin-top:4px;">Estação {{msg.estacao || 'estacao01'}} · {{msg.status || 'aguardando contato'}}</div>
+  </div>
+  <div style="display:flex;gap:8px;margin-bottom:10px;">
+    <div ng-repeat="item in msg.estados" ng-style="{background:item.fundo, color:item.texto, borderColor:item.borda}" style="flex:1;border-radius:10px;padding:10px 6px;text-align:center;border:2px solid #d5e4da;">
+      <div style="font-size:11px;text-transform:uppercase;">{{item.rotulo}}</div>
+      <div style="font-size:16px;font-weight:700;">{{item.nome}}</div>
+    </div>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:14px;font-size:14px;">
+    <div><strong>Classificação:</strong> {{msg.risco || 'aguardando leitura'}}</div>
+    <div><strong>Atualização:</strong> {{msg.horario || 'sem leitura'}}</div>
+  </div>
+  <div style="margin-top:6px;font-size:14px;"><strong>Atuadores:</strong> {{msg.atuadoresTexto || 'aguardando leitura ao vivo'}}</div>
+  <div style="margin-top:8px;font-size:12px;line-height:1.4;color:#3d5248;">{{msg.aviso || 'Protótipo experimental. Os valores exibidos são leituras da simulação, não medições reais do Parque Estadual do Cocó.'}}</div>
+</div>

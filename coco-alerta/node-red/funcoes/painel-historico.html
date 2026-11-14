@@ -1,0 +1,30 @@
+<div style="font-family:Segoe UI,Roboto,sans-serif;color:#143028;">
+  <div style="font-size:13px;margin-bottom:8px;">Leituras armazenadas: <strong>{{msg.total || 0}}</strong>. A tabela mostra as 20 mais recentes.</div>
+  <div ng-if="!msg || !msg.linhas || !msg.linhas.length" style="padding:12px;background:#f4f7f5;border-radius:8px;">Nenhuma leitura armazenada ainda.</div>
+  <div ng-if="msg && msg.linhas && msg.linhas.length" style="max-height:320px;overflow:auto;">
+    <table style="width:100%;border-collapse:collapse;font-size:12px;">
+      <thead>
+        <tr style="text-align:left;color:#0f3d2e;">
+          <th style="padding:4px;white-space:nowrap;">Hora</th>
+          <th style="padding:4px;">Solo</th>
+          <th style="padding:4px;">Ar</th>
+          <th style="padding:4px;">Umid.</th>
+          <th style="padding:4px;">Fumaça</th>
+          <th style="padding:4px;">Risco</th>
+          <th style="padding:4px;">Origem</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="linha in msg.linhas" style="border-top:1px solid #e1ebe4;">
+          <td style="padding:4px;white-space:nowrap;">{{linha.hora}}</td>
+          <td style="padding:4px;">{{linha.temperatura_solo}}</td>
+          <td style="padding:4px;">{{linha.temperatura_ambiente}}</td>
+          <td style="padding:4px;">{{linha.umidade}}</td>
+          <td style="padding:4px;">{{linha.fumaca}}</td>
+          <td style="padding:4px;font-weight:700;white-space:nowrap;" ng-style="{color:linha.cor}">{{linha.risco}}</td>
+          <td style="padding:4px;">{{linha.origem}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

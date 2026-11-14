@@ -1,0 +1,1052 @@
+[
+  {
+    "id": "c0c0a1e000000001",
+    "type": "tab",
+    "label": "Cocó Alerta",
+    "disabled": false,
+    "info": "Recepcao MQTT, validacao, classificacao, armazenamento e painel do prototipo Coco Alerta."
+  },
+  {
+    "id": "c0c0a1e000000002",
+    "type": "mqtt-broker",
+    "name": "Broker Cocó Alerta",
+    "broker": "broker.hivemq.com",
+    "port": "1883",
+    "clientid": "",
+    "autoConnect": true,
+    "usetls": false,
+    "protocolVersion": "4",
+    "keepalive": "60",
+    "cleansession": true,
+    "autoUnsubscribe": true,
+    "birthTopic": "",
+    "birthQos": "0",
+    "birthRetain": "false",
+    "birthPayload": "",
+    "birthMsg": {},
+    "closeTopic": "",
+    "closeQos": "0",
+    "closeRetain": "false",
+    "closePayload": "",
+    "closeMsg": {},
+    "willTopic": "",
+    "willQos": "0",
+    "willRetain": "false",
+    "willPayload": "",
+    "willMsg": {},
+    "sessionExpiry": ""
+  },
+  {
+    "id": "c0c0a1e000000003",
+    "type": "ui_base",
+    "theme": {
+      "name": "theme-custom",
+      "lightTheme": {
+        "default": "#0f3d2e",
+        "baseColor": "#0f3d2e",
+        "baseFont": "Segoe UI, sans-serif"
+      },
+      "darkTheme": {
+        "default": "#0f3d2e",
+        "baseColor": "#0f3d2e",
+        "baseFont": "Segoe UI, sans-serif"
+      },
+      "customTheme": {
+        "name": "Cocó Alerta",
+        "baseColor": "#0f3d2e",
+        "baseFont": "Segoe UI, sans-serif"
+      },
+      "angularTheme": {
+        "primary": "green",
+        "accents": "teal",
+        "warn": "red",
+        "background": "grey",
+        "palette": "light"
+      },
+      "themeState": {
+        "base-color": {
+          "value": "#0f3d2e",
+          "edited": true
+        },
+        "base-font": {
+          "value": "Segoe UI, sans-serif",
+          "edited": true
+        },
+        "page-titlebar-backgroundColor": {
+          "value": "#0f3d2e",
+          "edited": true
+        },
+        "page-backgroundColor": {
+          "value": "#e7f2ea",
+          "edited": true
+        },
+        "page-sidebar-backgroundColor": {
+          "value": "#0f3d2e",
+          "edited": true
+        },
+        "group-backgroundColor": {
+          "value": "#ffffff",
+          "edited": true
+        },
+        "group-textColor": {
+          "value": "#143028",
+          "edited": true
+        },
+        "group-borderColor": {
+          "value": "#d5e4da",
+          "edited": true
+        },
+        "widget-textColor": {
+          "value": "#143028",
+          "edited": true
+        },
+        "widget-backgroundColor": {
+          "value": "#f7faf8",
+          "edited": true
+        },
+        "widget-borderColor": {
+          "value": "#d5e4da",
+          "edited": true
+        }
+      }
+    },
+    "site": {
+      "name": "Cocó Alerta",
+      "hideToolbar": "false",
+      "allowSwipe": "false",
+      "lockMenu": "false",
+      "allowTempTheme": "true",
+      "dateFormat": "DD/MM/YYYY",
+      "sizes": {
+        "sx": 72,
+        "sy": 48,
+        "gx": 8,
+        "gy": 6,
+        "cx": 8,
+        "cy": 6,
+        "px": 0,
+        "py": 0
+      }
+    }
+  },
+  {
+    "id": "c0c0a1e00000000a",
+    "type": "ui_tab",
+    "name": "Monitoramento",
+    "icon": "eco",
+    "order": 1,
+    "disabled": false,
+    "hidden": false
+  },
+  {
+    "id": "c0c0a1e00000000b",
+    "type": "ui_group",
+    "name": "Central",
+    "tab": "c0c0a1e00000000a",
+    "order": 1,
+    "disp": true,
+    "width": 12,
+    "collapse": false,
+    "className": ""
+  },
+  {
+    "id": "c0c0a1e00000000c",
+    "type": "ui_group",
+    "name": "Indicadores",
+    "tab": "c0c0a1e00000000a",
+    "order": 2,
+    "disp": true,
+    "width": 12,
+    "collapse": false,
+    "className": ""
+  },
+  {
+    "id": "c0c0a1e00000000d",
+    "type": "ui_group",
+    "name": "Gráficos",
+    "tab": "c0c0a1e00000000a",
+    "order": 3,
+    "disp": true,
+    "width": 12,
+    "collapse": false,
+    "className": ""
+  },
+  {
+    "id": "c0c0a1e00000000e",
+    "type": "ui_group",
+    "name": "Histórico de leituras",
+    "tab": "c0c0a1e00000000a",
+    "order": 4,
+    "disp": true,
+    "width": 12,
+    "collapse": false,
+    "className": ""
+  },
+  {
+    "id": "c0c0a1e00000000f",
+    "type": "ui_group",
+    "name": "Ocorrências de risco",
+    "tab": "c0c0a1e00000000a",
+    "order": 5,
+    "disp": true,
+    "width": 12,
+    "collapse": false,
+    "className": ""
+  },
+  {
+    "id": "c0c0a1e000000014",
+    "type": "mqtt in",
+    "z": "c0c0a1e000000001",
+    "name": "Dados da estação",
+    "topic": "cocoalerta/monitoramento/estacao01/dados",
+    "qos": "0",
+    "datatype": "utf8",
+    "broker": "c0c0a1e000000002",
+    "nl": false,
+    "rap": true,
+    "rh": 0,
+    "inputs": 0,
+    "x": 170,
+    "y": 160,
+    "wires": [
+      [
+        "c0c0a1e000000015"
+      ]
+    ]
+  },
+  {
+    "id": "c0c0a1e000000015",
+    "type": "json",
+    "z": "c0c0a1e000000001",
+    "name": "Decodificar leitura",
+    "property": "payload",
+    "action": "",
+    "pretty": false,
+    "x": 400,
+    "y": 160,
+    "wires": [
+      [
+        "c0c0a1e000000016"
+      ]
+    ]
+  },
+  {
+    "id": "c0c0a1e000000016",
+    "type": "function",
+    "z": "c0c0a1e000000001",
+    "name": "Validar, classificar e registrar",
+    "func": "// Mesma regra de shared/limites.json e de wokwi/risk_engine.py.\n// A especificacao esta em docs/regras-de-risco.md.\n\nvar ORDEM_RISCO = { \"NORMAL\": 0, \"ATENÇÃO\": 1, \"ALERTA\": 2, \"EMERGÊNCIA\": 3 };\n\nfunction faixaAlto(valor, atencao, alerta, emergencia) {\n    if (valor >= emergencia) { return 3; }\n    if (valor >= alerta) { return 2; }\n    if (valor >= atencao) { return 1; }\n    return 0;\n}\n\nfunction faixaBaixo(valor, atencao, alerta, emergencia) {\n    if (valor <= emergencia) { return 3; }\n    if (valor <= alerta) { return 2; }\n    if (valor <= atencao) { return 1; }\n    return 0;\n}\n\nfunction classificarInstantaneo(solo, ambiente, umidade, fumaca, limites) {\n    var nSolo = faixaAlto(solo, limites.temperatura_solo_atencao, limites.temperatura_solo_alerta, limites.temperatura_solo_emergencia);\n    var nAmbiente = faixaAlto(ambiente, limites.temperatura_ambiente_atencao, limites.temperatura_ambiente_alerta, limites.temperatura_ambiente_emergencia);\n    var nUmidade = faixaBaixo(umidade, limites.umidade_atencao, limites.umidade_alerta, limites.umidade_emergencia);\n    var nFumaca = faixaAlto(fumaca, limites.fumaca_atencao, limites.fumaca_alerta, limites.fumaca_emergencia);\n    var termico = nSolo > nAmbiente ? nSolo : nAmbiente;\n\n    if (nSolo >= 3 && nFumaca >= 3 && (nAmbiente >= 3 || nUmidade >= 3)) {\n        return \"EMERGÊNCIA\";\n    }\n    if (termico >= 2 && nFumaca >= 2) {\n        return \"ALERTA\";\n    }\n    if (nSolo >= 1 || nAmbiente >= 1 || nUmidade >= 1 || nFumaca >= 1) {\n        return \"ATENÇÃO\";\n    }\n    return \"NORMAL\";\n}\n\nfunction avaliarEstado(estado, solo, ambiente, umidade, fumaca, limites, persistencia) {\n    var candidato = classificarInstantaneo(solo, ambiente, umidade, fumaca, limites);\n    var recentes = (estado.recentes || []).concat([candidato]);\n    if (recentes.length > persistencia) {\n        recentes = recentes.slice(recentes.length - persistencia);\n    }\n    var atual = estado.atual || \"NORMAL\";\n    if (recentes.length === persistencia && recentes.every(function (item) { return item === candidato; })) {\n        atual = candidato;\n    } else if (ORDEM_RISCO[candidato] < ORDEM_RISCO[atual]) {\n        atual = candidato;\n        recentes = [];\n        for (var i = 0; i < persistencia; i++) { recentes.push(candidato); }\n    }\n    return { atual: atual, recentes: recentes, instantaneo: candidato };\n}\n\nfunction simularSequencia(sequencia, limites, persistencia) {\n    var estado = { atual: \"NORMAL\", recentes: [] };\n    var saidas = [];\n    for (var i = 0; i < sequencia.length; i++) {\n        var item = sequencia[i];\n        estado = avaliarEstado(estado, item[0], item[1], item[2], item[3], limites, persistencia);\n        saidas.push(estado.atual);\n    }\n    return saidas;\n}\n\nvar CORES = {\n    \"NORMAL\": \"#1b7a3a\",\n    \"ATENÇÃO\": \"#b8860b\",\n    \"ALERTA\": \"#e65100\",\n    \"EMERGÊNCIA\": \"#b71c1c\"\n};\n\nfunction agoraLocal() {\n    var formatador = new Intl.DateTimeFormat(\"sv-SE\", {\n        timeZone: \"America/Fortaleza\",\n        year: \"numeric\",\n        month: \"2-digit\",\n        day: \"2-digit\",\n        hour: \"2-digit\",\n        minute: \"2-digit\",\n        second: \"2-digit\",\n        hour12: false\n    });\n    return formatador.format(new Date()).replace(\" \", \"T\") + \"-03:00\";\n}\n\nfunction csvCampo(valor) {\n    var texto = valor === null || valor === undefined ? \"\" : String(valor);\n    return '\"' + texto.replace(/\"/g, '\"\"') + '\"';\n}\n\nfunction linhaCsv(registro) {\n    return [\n        registro.estacao_id,\n        registro.registrado_em,\n        registro.timestamp,\n        registro.temperatura_solo,\n        registro.temperatura_ambiente,\n        registro.umidade,\n        registro.fumaca,\n        registro.risco,\n        registro.origem\n    ].map(csvCampo).join(\",\");\n}\n\nvar CABECALHO_CSV = \"estacao_id,registrado_em,timestamp,temperatura_solo,temperatura_ambiente,umidade,fumaca,risco,origem\";\n\nfunction dividirCsv(linha) {\n    var campos = [];\n    var atual = \"\";\n    var aspas = false;\n    for (var i = 0; i < linha.length; i++) {\n        var caractere = linha[i];\n        if (aspas) {\n            if (caractere === '\"' && linha[i + 1] === '\"') {\n                atual += '\"';\n                i += 1;\n            } else if (caractere === '\"') {\n                aspas = false;\n            } else {\n                atual += caractere;\n            }\n        } else if (caractere === '\"') {\n            aspas = true;\n        } else if (caractere === \",\") {\n            campos.push(atual);\n            atual = \"\";\n        } else {\n            atual += caractere;\n        }\n    }\n    campos.push(atual);\n    return campos;\n}\n\nfunction atuadoresDoRisco(risco) {\n    if (!risco || risco === \"aguardando\") {\n        return null;\n    }\n    return {\n        led_verde: risco === \"NORMAL\",\n        led_amarelo: risco === \"ATENÇÃO\",\n        led_vermelho: risco === \"ALERTA\" || risco === \"EMERGÊNCIA\",\n        buzzer: risco === \"ALERTA\" || risco === \"EMERGÊNCIA\"\n    };\n}\n\nfunction textoAtuadores(atuadores) {\n    if (!atuadores) {\n        return \"aguardando leitura ao vivo\";\n    }\n    var partes = [];\n    partes.push(atuadores.led_verde ? \"LED verde ligado\" : \"LED verde desligado\");\n    partes.push(atuadores.led_amarelo ? \"LED amarelo ligado\" : \"LED amarelo desligado\");\n    partes.push(atuadores.led_vermelho ? \"LED vermelho ligado\" : \"LED vermelho desligado\");\n    partes.push(atuadores.buzzer ? \"buzzer ativo\" : \"buzzer desligado\");\n    return partes.join(\" · \");\n}\n\nfunction mensagemPainel() {\n    var leitura = flow.get(\"ultimaLeitura\") || {};\n    var registro = flow.get(\"ultimaRegistro\") || {};\n    var risco = leitura.risco || registro.risco || \"aguardando\";\n    var atuadores = leitura.atuadores || atuadoresDoRisco(risco);\n    var nomes = [\"NORMAL\", \"ATENÇÃO\", \"ALERTA\", \"EMERGÊNCIA\"];\n    var estados = nomes.map(function (nome) {\n        var ativo = nome === risco;\n        return {\n            nome: nome,\n            rotulo: ativo ? \"estado atual\" : \"estado\",\n            fundo: ativo ? CORES[nome] : \"#f4f7f5\",\n            texto: ativo ? \"#ffffff\" : \"#3d5248\",\n            borda: CORES[nome]\n        };\n    });\n    return {\n        payload: risco,\n        estacao: leitura.estacao_id || registro.estacao_id || \"estacao01\",\n        status: flow.get(\"statusEstacao\") || \"aguardando contato\",\n        risco: risco,\n        cor: CORES[risco] || \"#0f3d2e\",\n        horario: registro.registrado_em || \"sem leitura\",\n        atuadoresTexto: textoAtuadores(atuadores),\n        estados: estados,\n        aviso: \"Protótipo experimental de apoio ao monitoramento. Não é um detector certificado de incêndio e não representa medições reais nem uma instalação no Parque Estadual do Cocó.\"\n    };\n}\n\nfunction mensagemHistorico() {\n    var lista = flow.get(\"leituras\") || [];\n    var linhas = lista.slice(-20).reverse().map(function (item) {\n        return {\n            registrado_em: item.registrado_em,\n            hora: String(item.registrado_em || \"\").slice(11, 19),\n            temperatura_solo: item.temperatura_solo,\n            temperatura_ambiente: item.temperatura_ambiente,\n            umidade: item.umidade,\n            fumaca: item.fumaca,\n            risco: item.risco,\n            origem: item.origem,\n            cor: CORES[item.risco] || \"#143028\"\n        };\n    });\n    return { payload: lista.length, total: lista.length, linhas: linhas };\n}\n\nfunction mensagemOcorrencias() {\n    var alertas = flow.get(\"alertas\") || [];\n    var linhas = alertas.slice(-20).reverse().map(function (item) {\n        return {\n            registrado_em: item.registrado_em,\n            hora: String(item.registrado_em || \"\").slice(11, 19),\n            risco_anterior: item.risco_anterior,\n            risco: item.risco,\n            temperatura_solo: item.temperatura_solo,\n            temperatura_ambiente: item.temperatura_ambiente,\n            umidade: item.umidade,\n            fumaca: item.fumaca,\n            cor: CORES[item.risco] || \"#143028\"\n        };\n    });\n    return { payload: alertas.length, total: alertas.length, linhas: linhas };\n}\n\nfunction mensagemContagem() {\n    return { payload: (flow.get(\"leituras\") || []).length };\n}\n\nfunction mensagensGraficos(lista) {\n    function pontos(campo) {\n        return lista.map(function (item) {\n            var instante = Date.parse(item.registrado_em);\n            return { x: isNaN(instante) ? Date.now() : instante, y: Number(item[campo]) };\n        });\n    }\n    if (!lista.length) {\n        return [null, null, null, null];\n    }\n    return [\n        { payload: [{ series: [\"Temperatura do solo\"], data: [pontos(\"temperatura_solo\")], labels: [\"\"] }] },\n        { payload: [{ series: [\"Temperatura ambiente\"], data: [pontos(\"temperatura_ambiente\")], labels: [\"\"] }] },\n        { payload: [{ series: [\"Umidade\"], data: [pontos(\"umidade\")], labels: [\"\"] }] },\n        { payload: [{ series: [\"Fumaça\"], data: [pontos(\"fumaca\")], labels: [\"\"] }] }\n    ];\n}\n\nvar embutido = {\"descricao\": \"Parametros experimentais da simulacao do Coco Alerta. Nao sao limites oficiais de seguranca ambiental nem limiares de um detector certificado.\", \"persistencia_leituras\": 2, \"limites\": {\"temperatura_solo_atencao\": 35, \"temperatura_solo_alerta\": 42, \"temperatura_solo_emergencia\": 50, \"temperatura_ambiente_atencao\": 36, \"temperatura_ambiente_alerta\": 40, \"temperatura_ambiente_emergencia\": 45, \"umidade_atencao\": 40, \"umidade_alerta\": 30, \"umidade_emergencia\": 25, \"fumaca_atencao\": 1000, \"fumaca_alerta\": 1800, \"fumaca_emergencia\": 2800}};\nif (!flow.get('limites')) {\n  flow.set('limites', embutido.limites);\n  flow.set('persistencia', embutido.persistencia_leituras);\n}\nvar dados = msg.payload;\nif (typeof dados === \"string\") {\n    try {\n        dados = JSON.parse(dados);\n    } catch (erro) {\n        node.warn(\"Mensagem MQTT nao e JSON valido.\");\n        return null;\n    }\n}\n\nfunction numero(valor, minimo, maximo, nome) {\n    if (typeof valor !== \"number\" || !isFinite(valor) || valor < minimo || valor > maximo) {\n        return nome + \" fora da faixa esperada da simulacao\";\n    }\n    return \"\";\n}\n\nif (!dados || typeof dados !== \"object\") {\n    node.warn(\"Leitura vazia.\");\n    return null;\n}\nvar campos = [\"estacao_id\", \"temperatura_solo\", \"temperatura_ambiente\", \"umidade\", \"fumaca\", \"risco\", \"atuadores\", \"origem\"];\nfor (var i = 0; i < campos.length; i++) {\n    if (dados[campos[i]] === undefined || dados[campos[i]] === null || dados[campos[i]] === \"\") {\n        node.warn(\"Campo obrigatorio ausente: \" + campos[i]);\n        return null;\n    }\n}\nvar erros = [\n    numero(dados.temperatura_solo, -55, 125, \"temperatura_solo\"),\n    numero(dados.temperatura_ambiente, -40, 80, \"temperatura_ambiente\"),\n    numero(dados.umidade, 0, 100, \"umidade\"),\n    numero(dados.fumaca, 0, 4095, \"fumaca\")\n].filter(Boolean);\nif (erros.length) {\n    node.warn(erros.join(\"; \"));\n    return null;\n}\nvar riscosValidos = { \"NORMAL\": 1, \"ATENÇÃO\": 1, \"ALERTA\": 1, \"EMERGÊNCIA\": 1 };\nif (!riscosValidos[dados.risco]) {\n    node.warn(\"Classificacao desconhecida: \" + dados.risco);\n    return null;\n}\nvar atuadores = dados.atuadores;\nif (!atuadores || typeof atuadores !== \"object\") {\n    node.warn(\"Estado dos atuadores ausente.\");\n    return null;\n}\n[\"led_verde\", \"led_amarelo\", \"led_vermelho\", \"buzzer\"].forEach(function (chave) {\n    if (typeof atuadores[chave] !== \"boolean\") {\n        erros.push(chave);\n    }\n});\nif (erros.length) {\n    node.warn(\"Atuadores devem ser verdadeiro ou falso.\");\n    return null;\n}\n\nvar limites = flow.get(\"limites\");\nvar persistencia = Number(flow.get(\"persistencia\") || 2);\nvar estado = flow.get(\"estadoRisco\") || { atual: \"NORMAL\", recentes: [] };\nvar calculado = avaliarEstado(\n    estado,\n    dados.temperatura_solo,\n    dados.temperatura_ambiente,\n    dados.umidade,\n    dados.fumaca,\n    limites,\n    persistencia\n);\nflow.set(\"estadoRisco\", { atual: calculado.atual, recentes: calculado.recentes });\nif (calculado.atual !== dados.risco) {\n    node.warn(\n        \"A estacao informou \" + dados.risco +\n        \" e o calculo local resultou em \" + calculado.atual +\n        \". O painel mantem a classificacao da estacao, porque ela tambem comanda os atuadores.\"\n    );\n}\n\nvar registro = {\n    estacao_id: String(dados.estacao_id),\n    registrado_em: agoraLocal(),\n    timestamp: dados.timestamp || \"\",\n    temperatura_solo: dados.temperatura_solo,\n    temperatura_ambiente: dados.temperatura_ambiente,\n    umidade: dados.umidade,\n    fumaca: dados.fumaca,\n    risco: dados.risco,\n    origem: String(dados.origem)\n};\nvar leituras = flow.get(\"leituras\") || [];\nleituras.push(registro);\nif (leituras.length > 500) {\n    leituras = leituras.slice(leituras.length - 500);\n}\nflow.set(\"leituras\", leituras);\nflow.set(\"ultimaLeitura\", dados);\nflow.set(\"ultimaRegistro\", registro);\n\nvar anterior = flow.get(\"ultimoRisco\");\nif (anterior !== registro.risco) {\n    var alertas = flow.get(\"alertas\") || [];\n    alertas.push({\n        registrado_em: registro.registrado_em,\n        risco_anterior: anterior || \"inicio\",\n        risco: registro.risco,\n        temperatura_solo: registro.temperatura_solo,\n        temperatura_ambiente: registro.temperatura_ambiente,\n        umidade: registro.umidade,\n        fumaca: registro.fumaca\n    });\n    if (alertas.length > 100) {\n        alertas = alertas.slice(alertas.length - 100);\n    }\n    flow.set(\"alertas\", alertas);\n    flow.set(\"ultimoRisco\", registro.risco);\n}\n\nvar arquivo = flow.get(\"arquivo\") || env.get(\"COCO_ALERTA_DATA\") || \"coco-alerta-readings.csv\";\nflow.set(\"arquivo\", arquivo);\nvar saidaArquivo = { filename: arquivo, payload: linhaCsv(registro) };\nif (!flow.get(\"temCabecalho\")) {\n    saidaArquivo = [\n        { filename: arquivo, payload: CABECALHO_CSV },\n        saidaArquivo\n    ];\n    flow.set(\"temCabecalho\", true);\n}\n\nreturn [\n    { payload: dados.temperatura_solo },\n    { payload: dados.temperatura_ambiente },\n    { payload: dados.umidade },\n    { payload: dados.fumaca },\n    { payload: dados.temperatura_solo, topic: \"Temperatura do solo\" },\n    { payload: dados.temperatura_ambiente, topic: \"Temperatura ambiente\" },\n    { payload: dados.umidade, topic: \"Umidade\" },\n    { payload: dados.fumaca, topic: \"Fumaca\" },\n    mensagemPainel(),\n    mensagemHistorico(),\n    mensagemOcorrencias(),\n    saidaArquivo,\n    mensagemContagem(),\n    { payload: dados }\n];\n",
+    "outputs": 14,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "timeout": 0,
+    "x": 680,
+    "y": 160,
+    "wires": [
+      [
+        "c0c0a1e000000028"
+      ],
+      [
+        "c0c0a1e000000029"
+      ],
+      [
+        "c0c0a1e00000002a"
+      ],
+      [
+        "c0c0a1e00000002b"
+      ],
+      [
+        "c0c0a1e000000032"
+      ],
+      [
+        "c0c0a1e000000033"
+      ],
+      [
+        "c0c0a1e000000034"
+      ],
+      [
+        "c0c0a1e000000035"
+      ],
+      [
+        "c0c0a1e00000003c"
+      ],
+      [
+        "c0c0a1e00000003d"
+      ],
+      [
+        "c0c0a1e00000003e"
+      ],
+      [
+        "c0c0a1e000000046"
+      ],
+      [
+        "c0c0a1e00000003f"
+      ],
+      [
+        "c0c0a1e000000047"
+      ]
+    ]
+  },
+  {
+    "id": "c0c0a1e000000017",
+    "type": "mqtt in",
+    "z": "c0c0a1e000000001",
+    "name": "Status da estação",
+    "topic": "cocoalerta/monitoramento/estacao01/status",
+    "qos": "0",
+    "datatype": "utf8",
+    "broker": "c0c0a1e000000002",
+    "nl": false,
+    "rap": true,
+    "rh": 0,
+    "inputs": 0,
+    "x": 170,
+    "y": 260,
+    "wires": [
+      [
+        "c0c0a1e000000018"
+      ]
+    ]
+  },
+  {
+    "id": "c0c0a1e000000018",
+    "type": "json",
+    "z": "c0c0a1e000000001",
+    "name": "Decodificar status",
+    "property": "payload",
+    "action": "",
+    "pretty": false,
+    "x": 400,
+    "y": 260,
+    "wires": [
+      [
+        "c0c0a1e000000019"
+      ]
+    ]
+  },
+  {
+    "id": "c0c0a1e000000019",
+    "type": "function",
+    "z": "c0c0a1e000000001",
+    "name": "Atualizar estado da estação",
+    "func": "var CORES = {\n    \"NORMAL\": \"#1b7a3a\",\n    \"ATENÇÃO\": \"#b8860b\",\n    \"ALERTA\": \"#e65100\",\n    \"EMERGÊNCIA\": \"#b71c1c\"\n};\n\nfunction agoraLocal() {\n    var formatador = new Intl.DateTimeFormat(\"sv-SE\", {\n        timeZone: \"America/Fortaleza\",\n        year: \"numeric\",\n        month: \"2-digit\",\n        day: \"2-digit\",\n        hour: \"2-digit\",\n        minute: \"2-digit\",\n        second: \"2-digit\",\n        hour12: false\n    });\n    return formatador.format(new Date()).replace(\" \", \"T\") + \"-03:00\";\n}\n\nfunction csvCampo(valor) {\n    var texto = valor === null || valor === undefined ? \"\" : String(valor);\n    return '\"' + texto.replace(/\"/g, '\"\"') + '\"';\n}\n\nfunction linhaCsv(registro) {\n    return [\n        registro.estacao_id,\n        registro.registrado_em,\n        registro.timestamp,\n        registro.temperatura_solo,\n        registro.temperatura_ambiente,\n        registro.umidade,\n        registro.fumaca,\n        registro.risco,\n        registro.origem\n    ].map(csvCampo).join(\",\");\n}\n\nvar CABECALHO_CSV = \"estacao_id,registrado_em,timestamp,temperatura_solo,temperatura_ambiente,umidade,fumaca,risco,origem\";\n\nfunction dividirCsv(linha) {\n    var campos = [];\n    var atual = \"\";\n    var aspas = false;\n    for (var i = 0; i < linha.length; i++) {\n        var caractere = linha[i];\n        if (aspas) {\n            if (caractere === '\"' && linha[i + 1] === '\"') {\n                atual += '\"';\n                i += 1;\n            } else if (caractere === '\"') {\n                aspas = false;\n            } else {\n                atual += caractere;\n            }\n        } else if (caractere === '\"') {\n            aspas = true;\n        } else if (caractere === \",\") {\n            campos.push(atual);\n            atual = \"\";\n        } else {\n            atual += caractere;\n        }\n    }\n    campos.push(atual);\n    return campos;\n}\n\nfunction atuadoresDoRisco(risco) {\n    if (!risco || risco === \"aguardando\") {\n        return null;\n    }\n    return {\n        led_verde: risco === \"NORMAL\",\n        led_amarelo: risco === \"ATENÇÃO\",\n        led_vermelho: risco === \"ALERTA\" || risco === \"EMERGÊNCIA\",\n        buzzer: risco === \"ALERTA\" || risco === \"EMERGÊNCIA\"\n    };\n}\n\nfunction textoAtuadores(atuadores) {\n    if (!atuadores) {\n        return \"aguardando leitura ao vivo\";\n    }\n    var partes = [];\n    partes.push(atuadores.led_verde ? \"LED verde ligado\" : \"LED verde desligado\");\n    partes.push(atuadores.led_amarelo ? \"LED amarelo ligado\" : \"LED amarelo desligado\");\n    partes.push(atuadores.led_vermelho ? \"LED vermelho ligado\" : \"LED vermelho desligado\");\n    partes.push(atuadores.buzzer ? \"buzzer ativo\" : \"buzzer desligado\");\n    return partes.join(\" · \");\n}\n\nfunction mensagemPainel() {\n    var leitura = flow.get(\"ultimaLeitura\") || {};\n    var registro = flow.get(\"ultimaRegistro\") || {};\n    var risco = leitura.risco || registro.risco || \"aguardando\";\n    var atuadores = leitura.atuadores || atuadoresDoRisco(risco);\n    var nomes = [\"NORMAL\", \"ATENÇÃO\", \"ALERTA\", \"EMERGÊNCIA\"];\n    var estados = nomes.map(function (nome) {\n        var ativo = nome === risco;\n        return {\n            nome: nome,\n            rotulo: ativo ? \"estado atual\" : \"estado\",\n            fundo: ativo ? CORES[nome] : \"#f4f7f5\",\n            texto: ativo ? \"#ffffff\" : \"#3d5248\",\n            borda: CORES[nome]\n        };\n    });\n    return {\n        payload: risco,\n        estacao: leitura.estacao_id || registro.estacao_id || \"estacao01\",\n        status: flow.get(\"statusEstacao\") || \"aguardando contato\",\n        risco: risco,\n        cor: CORES[risco] || \"#0f3d2e\",\n        horario: registro.registrado_em || \"sem leitura\",\n        atuadoresTexto: textoAtuadores(atuadores),\n        estados: estados,\n        aviso: \"Protótipo experimental de apoio ao monitoramento. Não é um detector certificado de incêndio e não representa medições reais nem uma instalação no Parque Estadual do Cocó.\"\n    };\n}\n\nfunction mensagemHistorico() {\n    var lista = flow.get(\"leituras\") || [];\n    var linhas = lista.slice(-20).reverse().map(function (item) {\n        return {\n            registrado_em: item.registrado_em,\n            hora: String(item.registrado_em || \"\").slice(11, 19),\n            temperatura_solo: item.temperatura_solo,\n            temperatura_ambiente: item.temperatura_ambiente,\n            umidade: item.umidade,\n            fumaca: item.fumaca,\n            risco: item.risco,\n            origem: item.origem,\n            cor: CORES[item.risco] || \"#143028\"\n        };\n    });\n    return { payload: lista.length, total: lista.length, linhas: linhas };\n}\n\nfunction mensagemOcorrencias() {\n    var alertas = flow.get(\"alertas\") || [];\n    var linhas = alertas.slice(-20).reverse().map(function (item) {\n        return {\n            registrado_em: item.registrado_em,\n            hora: String(item.registrado_em || \"\").slice(11, 19),\n            risco_anterior: item.risco_anterior,\n            risco: item.risco,\n            temperatura_solo: item.temperatura_solo,\n            temperatura_ambiente: item.temperatura_ambiente,\n            umidade: item.umidade,\n            fumaca: item.fumaca,\n            cor: CORES[item.risco] || \"#143028\"\n        };\n    });\n    return { payload: alertas.length, total: alertas.length, linhas: linhas };\n}\n\nfunction mensagemContagem() {\n    return { payload: (flow.get(\"leituras\") || []).length };\n}\n\nfunction mensagensGraficos(lista) {\n    function pontos(campo) {\n        return lista.map(function (item) {\n            var instante = Date.parse(item.registrado_em);\n            return { x: isNaN(instante) ? Date.now() : instante, y: Number(item[campo]) };\n        });\n    }\n    if (!lista.length) {\n        return [null, null, null, null];\n    }\n    return [\n        { payload: [{ series: [\"Temperatura do solo\"], data: [pontos(\"temperatura_solo\")], labels: [\"\"] }] },\n        { payload: [{ series: [\"Temperatura ambiente\"], data: [pontos(\"temperatura_ambiente\")], labels: [\"\"] }] },\n        { payload: [{ series: [\"Umidade\"], data: [pontos(\"umidade\")], labels: [\"\"] }] },\n        { payload: [{ series: [\"Fumaça\"], data: [pontos(\"fumaca\")], labels: [\"\"] }] }\n    ];\n}\n\nvar dados = msg.payload;\nif (typeof dados === \"string\") {\n    try {\n        dados = JSON.parse(dados);\n    } catch (erro) {\n        node.warn(\"Status MQTT nao esta em JSON.\");\n        return null;\n    }\n}\nif (!dados || typeof dados.status !== \"string\") {\n    node.warn(\"Status MQTT sem o campo status.\");\n    return null;\n}\nflow.set(\"statusEstacao\", dados.estacao_id ? dados.estacao_id + \" · \" + dados.status : dados.status);\nif (dados.intervalo_s) {\n    flow.set(\"intervaloEstacao\", dados.intervalo_s);\n}\nreturn mensagemPainel();\n",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "timeout": 0,
+    "x": 680,
+    "y": 260,
+    "wires": [
+      [
+        "c0c0a1e00000003c"
+      ]
+    ]
+  },
+  {
+    "id": "c0c0a1e00000001a",
+    "type": "mqtt in",
+    "z": "c0c0a1e000000001",
+    "name": "Alertas da estação",
+    "topic": "cocoalerta/monitoramento/estacao01/alertas",
+    "qos": "0",
+    "datatype": "utf8",
+    "broker": "c0c0a1e000000002",
+    "nl": false,
+    "rap": true,
+    "rh": 0,
+    "inputs": 0,
+    "x": 170,
+    "y": 340,
+    "wires": [
+      [
+        "c0c0a1e00000001b"
+      ]
+    ]
+  },
+  {
+    "id": "c0c0a1e00000001b",
+    "type": "debug",
+    "z": "c0c0a1e000000001",
+    "name": "Evento de alerta",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 430,
+    "y": 340,
+    "wires": []
+  },
+  {
+    "id": "c0c0a1e00000001e",
+    "type": "inject",
+    "z": "c0c0a1e000000001",
+    "name": "Ao iniciar o fluxo",
+    "props": [
+      {
+        "p": "payload"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "0.4",
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 180,
+    "y": 480,
+    "wires": [
+      [
+        "c0c0a1e00000001f"
+      ]
+    ]
+  },
+  {
+    "id": "c0c0a1e00000001f",
+    "type": "function",
+    "z": "c0c0a1e000000001",
+    "name": "Configurar armazenamento",
+    "func": "var embutido = {\"descricao\": \"Parametros experimentais da simulacao do Coco Alerta. Nao sao limites oficiais de seguranca ambiental nem limiares de um detector certificado.\", \"persistencia_leituras\": 2, \"limites\": {\"temperatura_solo_atencao\": 35, \"temperatura_solo_alerta\": 42, \"temperatura_solo_emergencia\": 50, \"temperatura_ambiente_atencao\": 36, \"temperatura_ambiente_alerta\": 40, \"temperatura_ambiente_emergencia\": 45, \"umidade_atencao\": 40, \"umidade_alerta\": 30, \"umidade_emergencia\": 25, \"fumaca_atencao\": 1000, \"fumaca_alerta\": 1800, \"fumaca_emergencia\": 2800}};\nflow.set(\"limites\", embutido.limites);\nflow.set(\"persistencia\", embutido.persistencia_leituras);\nflow.set(\"leituras\", flow.get(\"leituras\") || []);\nflow.set(\"alertas\", flow.get(\"alertas\") || []);\nflow.set(\"estadoRisco\", flow.get(\"estadoRisco\") || { atual: \"NORMAL\", recentes: [] });\nvar arquivo = env.get(\"COCO_ALERTA_DATA\") || \"coco-alerta-readings.csv\";\nflow.set(\"arquivo\", arquivo);\nflow.set(\"temCabecalho\", false);\nvar caminhoLimites = env.get(\"COCO_ALERTA_LIMITES\");\nif (!caminhoLimites) {\n    node.warn(\"COCO_ALERTA_LIMITES nao definido. O fluxo usa os limites embutidos, iguais ao arquivo shared/limites.json desta versao.\");\n}\nreturn [\n    { filename: arquivo, tipo: \"csv\" },\n    caminhoLimites ? { filename: caminhoLimites, tipo: \"limites\" } : null\n];\n",
+    "outputs": 2,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "timeout": 0,
+    "x": 430,
+    "y": 480,
+    "wires": [
+      [
+        "c0c0a1e000000020"
+      ],
+      [
+        "c0c0a1e000000022"
+      ]
+    ]
+  },
+  {
+    "id": "c0c0a1e000000020",
+    "type": "file in",
+    "z": "c0c0a1e000000001",
+    "name": "Ler histórico CSV",
+    "filename": "filename",
+    "filenameType": "msg",
+    "format": "utf8",
+    "chunk": false,
+    "sendError": false,
+    "encoding": "utf8",
+    "allProps": false,
+    "x": 680,
+    "y": 440,
+    "wires": [
+      [
+        "c0c0a1e000000021"
+      ]
+    ]
+  },
+  {
+    "id": "c0c0a1e000000021",
+    "type": "function",
+    "z": "c0c0a1e000000001",
+    "name": "Restaurar histórico",
+    "func": "var CORES = {\n    \"NORMAL\": \"#1b7a3a\",\n    \"ATENÇÃO\": \"#b8860b\",\n    \"ALERTA\": \"#e65100\",\n    \"EMERGÊNCIA\": \"#b71c1c\"\n};\n\nfunction agoraLocal() {\n    var formatador = new Intl.DateTimeFormat(\"sv-SE\", {\n        timeZone: \"America/Fortaleza\",\n        year: \"numeric\",\n        month: \"2-digit\",\n        day: \"2-digit\",\n        hour: \"2-digit\",\n        minute: \"2-digit\",\n        second: \"2-digit\",\n        hour12: false\n    });\n    return formatador.format(new Date()).replace(\" \", \"T\") + \"-03:00\";\n}\n\nfunction csvCampo(valor) {\n    var texto = valor === null || valor === undefined ? \"\" : String(valor);\n    return '\"' + texto.replace(/\"/g, '\"\"') + '\"';\n}\n\nfunction linhaCsv(registro) {\n    return [\n        registro.estacao_id,\n        registro.registrado_em,\n        registro.timestamp,\n        registro.temperatura_solo,\n        registro.temperatura_ambiente,\n        registro.umidade,\n        registro.fumaca,\n        registro.risco,\n        registro.origem\n    ].map(csvCampo).join(\",\");\n}\n\nvar CABECALHO_CSV = \"estacao_id,registrado_em,timestamp,temperatura_solo,temperatura_ambiente,umidade,fumaca,risco,origem\";\n\nfunction dividirCsv(linha) {\n    var campos = [];\n    var atual = \"\";\n    var aspas = false;\n    for (var i = 0; i < linha.length; i++) {\n        var caractere = linha[i];\n        if (aspas) {\n            if (caractere === '\"' && linha[i + 1] === '\"') {\n                atual += '\"';\n                i += 1;\n            } else if (caractere === '\"') {\n                aspas = false;\n            } else {\n                atual += caractere;\n            }\n        } else if (caractere === '\"') {\n            aspas = true;\n        } else if (caractere === \",\") {\n            campos.push(atual);\n            atual = \"\";\n        } else {\n            atual += caractere;\n        }\n    }\n    campos.push(atual);\n    return campos;\n}\n\nfunction atuadoresDoRisco(risco) {\n    if (!risco || risco === \"aguardando\") {\n        return null;\n    }\n    return {\n        led_verde: risco === \"NORMAL\",\n        led_amarelo: risco === \"ATENÇÃO\",\n        led_vermelho: risco === \"ALERTA\" || risco === \"EMERGÊNCIA\",\n        buzzer: risco === \"ALERTA\" || risco === \"EMERGÊNCIA\"\n    };\n}\n\nfunction textoAtuadores(atuadores) {\n    if (!atuadores) {\n        return \"aguardando leitura ao vivo\";\n    }\n    var partes = [];\n    partes.push(atuadores.led_verde ? \"LED verde ligado\" : \"LED verde desligado\");\n    partes.push(atuadores.led_amarelo ? \"LED amarelo ligado\" : \"LED amarelo desligado\");\n    partes.push(atuadores.led_vermelho ? \"LED vermelho ligado\" : \"LED vermelho desligado\");\n    partes.push(atuadores.buzzer ? \"buzzer ativo\" : \"buzzer desligado\");\n    return partes.join(\" · \");\n}\n\nfunction mensagemPainel() {\n    var leitura = flow.get(\"ultimaLeitura\") || {};\n    var registro = flow.get(\"ultimaRegistro\") || {};\n    var risco = leitura.risco || registro.risco || \"aguardando\";\n    var atuadores = leitura.atuadores || atuadoresDoRisco(risco);\n    var nomes = [\"NORMAL\", \"ATENÇÃO\", \"ALERTA\", \"EMERGÊNCIA\"];\n    var estados = nomes.map(function (nome) {\n        var ativo = nome === risco;\n        return {\n            nome: nome,\n            rotulo: ativo ? \"estado atual\" : \"estado\",\n            fundo: ativo ? CORES[nome] : \"#f4f7f5\",\n            texto: ativo ? \"#ffffff\" : \"#3d5248\",\n            borda: CORES[nome]\n        };\n    });\n    return {\n        payload: risco,\n        estacao: leitura.estacao_id || registro.estacao_id || \"estacao01\",\n        status: flow.get(\"statusEstacao\") || \"aguardando contato\",\n        risco: risco,\n        cor: CORES[risco] || \"#0f3d2e\",\n        horario: registro.registrado_em || \"sem leitura\",\n        atuadoresTexto: textoAtuadores(atuadores),\n        estados: estados,\n        aviso: \"Protótipo experimental de apoio ao monitoramento. Não é um detector certificado de incêndio e não representa medições reais nem uma instalação no Parque Estadual do Cocó.\"\n    };\n}\n\nfunction mensagemHistorico() {\n    var lista = flow.get(\"leituras\") || [];\n    var linhas = lista.slice(-20).reverse().map(function (item) {\n        return {\n            registrado_em: item.registrado_em,\n            hora: String(item.registrado_em || \"\").slice(11, 19),\n            temperatura_solo: item.temperatura_solo,\n            temperatura_ambiente: item.temperatura_ambiente,\n            umidade: item.umidade,\n            fumaca: item.fumaca,\n            risco: item.risco,\n            origem: item.origem,\n            cor: CORES[item.risco] || \"#143028\"\n        };\n    });\n    return { payload: lista.length, total: lista.length, linhas: linhas };\n}\n\nfunction mensagemOcorrencias() {\n    var alertas = flow.get(\"alertas\") || [];\n    var linhas = alertas.slice(-20).reverse().map(function (item) {\n        return {\n            registrado_em: item.registrado_em,\n            hora: String(item.registrado_em || \"\").slice(11, 19),\n            risco_anterior: item.risco_anterior,\n            risco: item.risco,\n            temperatura_solo: item.temperatura_solo,\n            temperatura_ambiente: item.temperatura_ambiente,\n            umidade: item.umidade,\n            fumaca: item.fumaca,\n            cor: CORES[item.risco] || \"#143028\"\n        };\n    });\n    return { payload: alertas.length, total: alertas.length, linhas: linhas };\n}\n\nfunction mensagemContagem() {\n    return { payload: (flow.get(\"leituras\") || []).length };\n}\n\nfunction mensagensGraficos(lista) {\n    function pontos(campo) {\n        return lista.map(function (item) {\n            var instante = Date.parse(item.registrado_em);\n            return { x: isNaN(instante) ? Date.now() : instante, y: Number(item[campo]) };\n        });\n    }\n    if (!lista.length) {\n        return [null, null, null, null];\n    }\n    return [\n        { payload: [{ series: [\"Temperatura do solo\"], data: [pontos(\"temperatura_solo\")], labels: [\"\"] }] },\n        { payload: [{ series: [\"Temperatura ambiente\"], data: [pontos(\"temperatura_ambiente\")], labels: [\"\"] }] },\n        { payload: [{ series: [\"Umidade\"], data: [pontos(\"umidade\")], labels: [\"\"] }] },\n        { payload: [{ series: [\"Fumaça\"], data: [pontos(\"fumaca\")], labels: [\"\"] }] }\n    ];\n}\n\nvar texto = typeof msg.payload === \"string\" ? msg.payload : \"\";\nvar linhas = texto.split(/\\r?\\n/).filter(function (linha) { return linha.trim() !== \"\"; });\nvar leituras = [];\nif (linhas.length > 0 && linhas[0].indexOf(\"estacao_id\") === 0) {\n    flow.set(\"temCabecalho\", true);\n    linhas = linhas.slice(1);\n}\nlinhas.forEach(function (linha) {\n    var campos = dividirCsv(linha);\n    if (campos.length < 9) {\n        return;\n    }\n    leituras.push({\n        estacao_id: campos[0],\n        registrado_em: campos[1],\n        timestamp: campos[2],\n        temperatura_solo: Number(campos[3]),\n        temperatura_ambiente: Number(campos[4]),\n        umidade: Number(campos[5]),\n        fumaca: Number(campos[6]),\n        risco: campos[7],\n        origem: campos[8]\n    });\n});\nflow.set(\"leituras\", leituras);\nvar alertas = [];\nvar riscoAnterior = null;\nleituras.forEach(function (item) {\n    if (riscoAnterior !== item.risco) {\n        alertas.push({\n            registrado_em: item.registrado_em,\n            risco_anterior: riscoAnterior || \"inicio\",\n            risco: item.risco,\n            temperatura_solo: item.temperatura_solo,\n            temperatura_ambiente: item.temperatura_ambiente,\n            umidade: item.umidade,\n            fumaca: item.fumaca\n        });\n        riscoAnterior = item.risco;\n    }\n});\nflow.set(\"alertas\", alertas);\nif (leituras.length) {\n    flow.set(\"ultimaRegistro\", leituras[leituras.length - 1]);\n    flow.set(\"ultimoRisco\", leituras[leituras.length - 1].risco);\n}\nvar ultima = leituras.length ? leituras[leituras.length - 1] : null;\nvar graficos = mensagensGraficos(leituras);\nvar medidores = ultima ? [\n    { payload: ultima.temperatura_solo },\n    { payload: ultima.temperatura_ambiente },\n    { payload: ultima.umidade },\n    { payload: ultima.fumaca }\n] : [null, null, null, null];\nnode.log(\"Historico restaurado: \" + leituras.length + \" leituras.\");\nreturn medidores.concat(graficos).concat([\n    mensagemPainel(),\n    mensagemHistorico(),\n    mensagemOcorrencias(),\n    mensagemContagem()\n]);\n",
+    "outputs": 12,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "timeout": 0,
+    "x": 920,
+    "y": 440,
+    "wires": [
+      [
+        "c0c0a1e000000028"
+      ],
+      [
+        "c0c0a1e000000029"
+      ],
+      [
+        "c0c0a1e00000002a"
+      ],
+      [
+        "c0c0a1e00000002b"
+      ],
+      [
+        "c0c0a1e000000032"
+      ],
+      [
+        "c0c0a1e000000033"
+      ],
+      [
+        "c0c0a1e000000034"
+      ],
+      [
+        "c0c0a1e000000035"
+      ],
+      [
+        "c0c0a1e00000003c"
+      ],
+      [
+        "c0c0a1e00000003d"
+      ],
+      [
+        "c0c0a1e00000003e"
+      ],
+      [
+        "c0c0a1e00000003f"
+      ]
+    ]
+  },
+  {
+    "id": "c0c0a1e000000022",
+    "type": "file in",
+    "z": "c0c0a1e000000001",
+    "name": "Ler limites",
+    "filename": "filename",
+    "filenameType": "msg",
+    "format": "utf8",
+    "chunk": false,
+    "sendError": false,
+    "encoding": "utf8",
+    "allProps": false,
+    "x": 660,
+    "y": 520,
+    "wires": [
+      [
+        "c0c0a1e000000023"
+      ]
+    ]
+  },
+  {
+    "id": "c0c0a1e000000023",
+    "type": "function",
+    "z": "c0c0a1e000000001",
+    "name": "Aplicar limites experimentais",
+    "func": "try {\n    var dados = typeof msg.payload === \"string\" ? JSON.parse(msg.payload) : msg.payload;\n    if (!dados.limites || !dados.persistencia_leituras) {\n        node.warn(\"Arquivo de limites incompleto. Mantendo os limites ja carregados.\");\n        return null;\n    }\n    flow.set(\"limites\", dados.limites);\n    flow.set(\"persistencia\", Number(dados.persistencia_leituras));\n    node.log(\"Limites experimentais carregados de \" + msg.filename);\n} catch (erro) {\n    node.warn(\"Nao foi possivel ler os limites: \" + erro.message);\n}\nreturn null;\n",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "timeout": 0,
+    "x": 920,
+    "y": 520,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "c0c0a1e000000024",
+    "type": "http in",
+    "z": "c0c0a1e000000001",
+    "name": "Exportar CSV",
+    "url": "/coco-alerta/leituras.csv",
+    "method": "get",
+    "upload": false,
+    "swaggerDoc": "",
+    "x": 170,
+    "y": 620,
+    "wires": [
+      [
+        "c0c0a1e000000025"
+      ]
+    ]
+  },
+  {
+    "id": "c0c0a1e000000025",
+    "type": "function",
+    "z": "c0c0a1e000000001",
+    "name": "Montar CSV para download",
+    "func": "var CORES = {\n    \"NORMAL\": \"#1b7a3a\",\n    \"ATENÇÃO\": \"#b8860b\",\n    \"ALERTA\": \"#e65100\",\n    \"EMERGÊNCIA\": \"#b71c1c\"\n};\n\nfunction agoraLocal() {\n    var formatador = new Intl.DateTimeFormat(\"sv-SE\", {\n        timeZone: \"America/Fortaleza\",\n        year: \"numeric\",\n        month: \"2-digit\",\n        day: \"2-digit\",\n        hour: \"2-digit\",\n        minute: \"2-digit\",\n        second: \"2-digit\",\n        hour12: false\n    });\n    return formatador.format(new Date()).replace(\" \", \"T\") + \"-03:00\";\n}\n\nfunction csvCampo(valor) {\n    var texto = valor === null || valor === undefined ? \"\" : String(valor);\n    return '\"' + texto.replace(/\"/g, '\"\"') + '\"';\n}\n\nfunction linhaCsv(registro) {\n    return [\n        registro.estacao_id,\n        registro.registrado_em,\n        registro.timestamp,\n        registro.temperatura_solo,\n        registro.temperatura_ambiente,\n        registro.umidade,\n        registro.fumaca,\n        registro.risco,\n        registro.origem\n    ].map(csvCampo).join(\",\");\n}\n\nvar CABECALHO_CSV = \"estacao_id,registrado_em,timestamp,temperatura_solo,temperatura_ambiente,umidade,fumaca,risco,origem\";\n\nfunction dividirCsv(linha) {\n    var campos = [];\n    var atual = \"\";\n    var aspas = false;\n    for (var i = 0; i < linha.length; i++) {\n        var caractere = linha[i];\n        if (aspas) {\n            if (caractere === '\"' && linha[i + 1] === '\"') {\n                atual += '\"';\n                i += 1;\n            } else if (caractere === '\"') {\n                aspas = false;\n            } else {\n                atual += caractere;\n            }\n        } else if (caractere === '\"') {\n            aspas = true;\n        } else if (caractere === \",\") {\n            campos.push(atual);\n            atual = \"\";\n        } else {\n            atual += caractere;\n        }\n    }\n    campos.push(atual);\n    return campos;\n}\n\nfunction atuadoresDoRisco(risco) {\n    if (!risco || risco === \"aguardando\") {\n        return null;\n    }\n    return {\n        led_verde: risco === \"NORMAL\",\n        led_amarelo: risco === \"ATENÇÃO\",\n        led_vermelho: risco === \"ALERTA\" || risco === \"EMERGÊNCIA\",\n        buzzer: risco === \"ALERTA\" || risco === \"EMERGÊNCIA\"\n    };\n}\n\nfunction textoAtuadores(atuadores) {\n    if (!atuadores) {\n        return \"aguardando leitura ao vivo\";\n    }\n    var partes = [];\n    partes.push(atuadores.led_verde ? \"LED verde ligado\" : \"LED verde desligado\");\n    partes.push(atuadores.led_amarelo ? \"LED amarelo ligado\" : \"LED amarelo desligado\");\n    partes.push(atuadores.led_vermelho ? \"LED vermelho ligado\" : \"LED vermelho desligado\");\n    partes.push(atuadores.buzzer ? \"buzzer ativo\" : \"buzzer desligado\");\n    return partes.join(\" · \");\n}\n\nfunction mensagemPainel() {\n    var leitura = flow.get(\"ultimaLeitura\") || {};\n    var registro = flow.get(\"ultimaRegistro\") || {};\n    var risco = leitura.risco || registro.risco || \"aguardando\";\n    var atuadores = leitura.atuadores || atuadoresDoRisco(risco);\n    var nomes = [\"NORMAL\", \"ATENÇÃO\", \"ALERTA\", \"EMERGÊNCIA\"];\n    var estados = nomes.map(function (nome) {\n        var ativo = nome === risco;\n        return {\n            nome: nome,\n            rotulo: ativo ? \"estado atual\" : \"estado\",\n            fundo: ativo ? CORES[nome] : \"#f4f7f5\",\n            texto: ativo ? \"#ffffff\" : \"#3d5248\",\n            borda: CORES[nome]\n        };\n    });\n    return {\n        payload: risco,\n        estacao: leitura.estacao_id || registro.estacao_id || \"estacao01\",\n        status: flow.get(\"statusEstacao\") || \"aguardando contato\",\n        risco: risco,\n        cor: CORES[risco] || \"#0f3d2e\",\n        horario: registro.registrado_em || \"sem leitura\",\n        atuadoresTexto: textoAtuadores(atuadores),\n        estados: estados,\n        aviso: \"Protótipo experimental de apoio ao monitoramento. Não é um detector certificado de incêndio e não representa medições reais nem uma instalação no Parque Estadual do Cocó.\"\n    };\n}\n\nfunction mensagemHistorico() {\n    var lista = flow.get(\"leituras\") || [];\n    var linhas = lista.slice(-20).reverse().map(function (item) {\n        return {\n            registrado_em: item.registrado_em,\n            hora: String(item.registrado_em || \"\").slice(11, 19),\n            temperatura_solo: item.temperatura_solo,\n            temperatura_ambiente: item.temperatura_ambiente,\n            umidade: item.umidade,\n            fumaca: item.fumaca,\n            risco: item.risco,\n            origem: item.origem,\n            cor: CORES[item.risco] || \"#143028\"\n        };\n    });\n    return { payload: lista.length, total: lista.length, linhas: linhas };\n}\n\nfunction mensagemOcorrencias() {\n    var alertas = flow.get(\"alertas\") || [];\n    var linhas = alertas.slice(-20).reverse().map(function (item) {\n        return {\n            registrado_em: item.registrado_em,\n            hora: String(item.registrado_em || \"\").slice(11, 19),\n            risco_anterior: item.risco_anterior,\n            risco: item.risco,\n            temperatura_solo: item.temperatura_solo,\n            temperatura_ambiente: item.temperatura_ambiente,\n            umidade: item.umidade,\n            fumaca: item.fumaca,\n            cor: CORES[item.risco] || \"#143028\"\n        };\n    });\n    return { payload: alertas.length, total: alertas.length, linhas: linhas };\n}\n\nfunction mensagemContagem() {\n    return { payload: (flow.get(\"leituras\") || []).length };\n}\n\nfunction mensagensGraficos(lista) {\n    function pontos(campo) {\n        return lista.map(function (item) {\n            var instante = Date.parse(item.registrado_em);\n            return { x: isNaN(instante) ? Date.now() : instante, y: Number(item[campo]) };\n        });\n    }\n    if (!lista.length) {\n        return [null, null, null, null];\n    }\n    return [\n        { payload: [{ series: [\"Temperatura do solo\"], data: [pontos(\"temperatura_solo\")], labels: [\"\"] }] },\n        { payload: [{ series: [\"Temperatura ambiente\"], data: [pontos(\"temperatura_ambiente\")], labels: [\"\"] }] },\n        { payload: [{ series: [\"Umidade\"], data: [pontos(\"umidade\")], labels: [\"\"] }] },\n        { payload: [{ series: [\"Fumaça\"], data: [pontos(\"fumaca\")], labels: [\"\"] }] }\n    ];\n}\n\nvar lista = flow.get(\"leituras\") || [];\nvar corpo = lista.map(linhaCsv).join(\"\\n\");\nmsg.payload = CABECALHO_CSV + (corpo ? \"\\n\" + corpo : \"\") + \"\\n\";\nmsg.headers = {\n    \"Content-Type\": \"text/csv; charset=utf-8\",\n    \"Content-Disposition\": \"attachment; filename=leituras-coco-alerta.csv\"\n};\nreturn msg;\n",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "timeout": 0,
+    "x": 430,
+    "y": 620,
+    "wires": [
+      [
+        "c0c0a1e000000026"
+      ]
+    ]
+  },
+  {
+    "id": "c0c0a1e000000026",
+    "type": "http response",
+    "z": "c0c0a1e000000001",
+    "name": "Responder CSV",
+    "statusCode": "",
+    "headers": {},
+    "x": 680,
+    "y": 620,
+    "wires": []
+  },
+  {
+    "id": "c0c0a1e000000027",
+    "type": "catch",
+    "z": "c0c0a1e000000001",
+    "name": "Erros do fluxo",
+    "scope": null,
+    "uncaught": false,
+    "x": 160,
+    "y": 720,
+    "wires": [
+      [
+        "c0c0a1e000000048"
+      ]
+    ]
+  },
+  {
+    "id": "c0c0a1e000000028",
+    "type": "ui_gauge",
+    "z": "c0c0a1e000000001",
+    "name": "Solo",
+    "group": "c0c0a1e00000000c",
+    "order": 1,
+    "width": 3,
+    "height": 3,
+    "gtype": "gage",
+    "title": "Solo",
+    "label": "°C",
+    "format": "{{value | number:1}}",
+    "min": 0,
+    "max": 80,
+    "colors": [
+      "#1b7a3a",
+      "#b8860b",
+      "#b71c1c"
+    ],
+    "seg1": 35,
+    "seg2": 50,
+    "diff": false,
+    "className": "",
+    "x": 980,
+    "y": 120,
+    "wires": []
+  },
+  {
+    "id": "c0c0a1e000000029",
+    "type": "ui_gauge",
+    "z": "c0c0a1e000000001",
+    "name": "Ambiente",
+    "group": "c0c0a1e00000000c",
+    "order": 2,
+    "width": 3,
+    "height": 3,
+    "gtype": "gage",
+    "title": "Ambiente",
+    "label": "°C",
+    "format": "{{value | number:1}}",
+    "min": 0,
+    "max": 70,
+    "colors": [
+      "#1b7a3a",
+      "#b8860b",
+      "#b71c1c"
+    ],
+    "seg1": 36,
+    "seg2": 45,
+    "diff": false,
+    "className": "",
+    "x": 980,
+    "y": 160,
+    "wires": []
+  },
+  {
+    "id": "c0c0a1e00000002a",
+    "type": "ui_gauge",
+    "z": "c0c0a1e000000001",
+    "name": "Umidade",
+    "group": "c0c0a1e00000000c",
+    "order": 3,
+    "width": 3,
+    "height": 3,
+    "gtype": "gage",
+    "title": "Umidade",
+    "label": "%",
+    "format": "{{value | number:1}}",
+    "min": 0,
+    "max": 100,
+    "colors": [
+      "#b71c1c",
+      "#b8860b",
+      "#1b7a3a"
+    ],
+    "seg1": 30,
+    "seg2": 45,
+    "diff": false,
+    "className": "",
+    "x": 980,
+    "y": 200,
+    "wires": []
+  },
+  {
+    "id": "c0c0a1e00000002b",
+    "type": "ui_gauge",
+    "z": "c0c0a1e000000001",
+    "name": "Fumaça",
+    "group": "c0c0a1e00000000c",
+    "order": 4,
+    "width": 3,
+    "height": 3,
+    "gtype": "gage",
+    "title": "Fumaça",
+    "label": "ADC",
+    "format": "{{value | number:0}}",
+    "min": 0,
+    "max": 4095,
+    "colors": [
+      "#1b7a3a",
+      "#b8860b",
+      "#b71c1c"
+    ],
+    "seg1": 1000,
+    "seg2": 1800,
+    "diff": false,
+    "className": "",
+    "x": 980,
+    "y": 240,
+    "wires": []
+  },
+  {
+    "id": "c0c0a1e000000032",
+    "type": "ui_chart",
+    "z": "c0c0a1e000000001",
+    "name": "Evolução da temperatura do solo",
+    "group": "c0c0a1e00000000d",
+    "order": 1,
+    "width": 6,
+    "height": 6,
+    "label": "Evolução da temperatura do solo",
+    "chartType": "line",
+    "legend": "false",
+    "xformat": "HH:mm:ss",
+    "interpolate": "linear",
+    "nodata": "Aguardando leituras da simulação",
+    "dot": false,
+    "ymin": "",
+    "ymax": "",
+    "removeOlder": 1,
+    "removeOlderPoints": "40",
+    "removeOlderUnit": "3600",
+    "cutout": 0,
+    "useOneColor": true,
+    "useUTC": false,
+    "colors": [
+      "#1b7a3a",
+      "#AEC7E8",
+      "#FF7F0E",
+      "#2CA02C",
+      "#98DF8A",
+      "#D62728",
+      "#FF9896",
+      "#9467BD",
+      "#C5B0D5"
+    ],
+    "outputs": 1,
+    "useDifferentColor": false,
+    "className": "",
+    "x": 1180,
+    "y": 120,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "c0c0a1e000000033",
+    "type": "ui_chart",
+    "z": "c0c0a1e000000001",
+    "name": "Evolução da temperatura ambiente",
+    "group": "c0c0a1e00000000d",
+    "order": 2,
+    "width": 6,
+    "height": 6,
+    "label": "Evolução da temperatura ambiente",
+    "chartType": "line",
+    "legend": "false",
+    "xformat": "HH:mm:ss",
+    "interpolate": "linear",
+    "nodata": "Aguardando leituras da simulação",
+    "dot": false,
+    "ymin": "",
+    "ymax": "",
+    "removeOlder": 1,
+    "removeOlderPoints": "40",
+    "removeOlderUnit": "3600",
+    "cutout": 0,
+    "useOneColor": true,
+    "useUTC": false,
+    "colors": [
+      "#1565c0",
+      "#AEC7E8",
+      "#FF7F0E",
+      "#2CA02C",
+      "#98DF8A",
+      "#D62728",
+      "#FF9896",
+      "#9467BD",
+      "#C5B0D5"
+    ],
+    "outputs": 1,
+    "useDifferentColor": false,
+    "className": "",
+    "x": 1180,
+    "y": 160,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "c0c0a1e000000034",
+    "type": "ui_chart",
+    "z": "c0c0a1e000000001",
+    "name": "Variação da umidade",
+    "group": "c0c0a1e00000000d",
+    "order": 3,
+    "width": 6,
+    "height": 6,
+    "label": "Variação da umidade",
+    "chartType": "line",
+    "legend": "false",
+    "xformat": "HH:mm:ss",
+    "interpolate": "linear",
+    "nodata": "Aguardando leituras da simulação",
+    "dot": false,
+    "ymin": "",
+    "ymax": "",
+    "removeOlder": 1,
+    "removeOlderPoints": "40",
+    "removeOlderUnit": "3600",
+    "cutout": 0,
+    "useOneColor": true,
+    "useUTC": false,
+    "colors": [
+      "#00838f",
+      "#AEC7E8",
+      "#FF7F0E",
+      "#2CA02C",
+      "#98DF8A",
+      "#D62728",
+      "#FF9896",
+      "#9467BD",
+      "#C5B0D5"
+    ],
+    "outputs": 1,
+    "useDifferentColor": false,
+    "className": "",
+    "x": 1180,
+    "y": 200,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "c0c0a1e000000035",
+    "type": "ui_chart",
+    "z": "c0c0a1e000000001",
+    "name": "Evolução do indicador de fumaça",
+    "group": "c0c0a1e00000000d",
+    "order": 4,
+    "width": 6,
+    "height": 6,
+    "label": "Evolução do indicador de fumaça",
+    "chartType": "line",
+    "legend": "false",
+    "xformat": "HH:mm:ss",
+    "interpolate": "linear",
+    "nodata": "Aguardando leituras da simulação",
+    "dot": false,
+    "ymin": "",
+    "ymax": "",
+    "removeOlder": 1,
+    "removeOlderPoints": "40",
+    "removeOlderUnit": "3600",
+    "cutout": 0,
+    "useOneColor": true,
+    "useUTC": false,
+    "colors": [
+      "#e65100",
+      "#AEC7E8",
+      "#FF7F0E",
+      "#2CA02C",
+      "#98DF8A",
+      "#D62728",
+      "#FF9896",
+      "#9467BD",
+      "#C5B0D5"
+    ],
+    "outputs": 1,
+    "useDifferentColor": false,
+    "className": "",
+    "x": 1180,
+    "y": 240,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "c0c0a1e00000003c",
+    "type": "ui_template",
+    "z": "c0c0a1e000000001",
+    "group": "c0c0a1e00000000b",
+    "name": "Central",
+    "order": 1,
+    "width": 12,
+    "height": 6,
+    "format": "<div style=\"font-family:Segoe UI,Roboto,sans-serif;color:#143028;\">\n  <div style=\"background:#0f3d2e;color:#f4faf6;border-radius:12px;padding:14px 16px;margin-bottom:10px;\">\n    <div style=\"font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.85;\">Central de monitoramento ambiental</div>\n    <div style=\"font-size:26px;font-weight:700;line-height:1.2;\">Cocó Alerta</div>\n    <div style=\"font-size:14px;margin-top:4px;\">Estação {{msg.estacao || 'estacao01'}} · {{msg.status || 'aguardando contato'}}</div>\n  </div>\n  <div style=\"display:flex;gap:8px;margin-bottom:10px;\">\n    <div ng-repeat=\"item in msg.estados\" ng-style=\"{background:item.fundo, color:item.texto, borderColor:item.borda}\" style=\"flex:1;border-radius:10px;padding:10px 6px;text-align:center;border:2px solid #d5e4da;\">\n      <div style=\"font-size:11px;text-transform:uppercase;\">{{item.rotulo}}</div>\n      <div style=\"font-size:16px;font-weight:700;\">{{item.nome}}</div>\n    </div>\n  </div>\n  <div style=\"display:flex;flex-wrap:wrap;gap:14px;font-size:14px;\">\n    <div><strong>Classificação:</strong> {{msg.risco || 'aguardando leitura'}}</div>\n    <div><strong>Atualização:</strong> {{msg.horario || 'sem leitura'}}</div>\n  </div>\n  <div style=\"margin-top:6px;font-size:14px;\"><strong>Atuadores:</strong> {{msg.atuadoresTexto || 'aguardando leitura ao vivo'}}</div>\n  <div style=\"margin-top:8px;font-size:12px;line-height:1.4;color:#3d5248;\">{{msg.aviso || 'Protótipo experimental. Os valores exibidos são leituras da simulação, não medições reais do Parque Estadual do Cocó.'}}</div>\n</div>\n",
+    "storeOutMessages": true,
+    "fwdInMessages": true,
+    "resendOnRefresh": true,
+    "templateScope": "local",
+    "className": "",
+    "x": 210,
+    "y": 860,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "c0c0a1e00000003d",
+    "type": "ui_template",
+    "z": "c0c0a1e000000001",
+    "group": "c0c0a1e00000000e",
+    "name": "Histórico",
+    "order": 1,
+    "width": 12,
+    "height": 8,
+    "format": "<div style=\"font-family:Segoe UI,Roboto,sans-serif;color:#143028;\">\n  <div style=\"font-size:13px;margin-bottom:8px;\">Leituras armazenadas: <strong>{{msg.total || 0}}</strong>. A tabela mostra as 20 mais recentes.</div>\n  <div ng-if=\"!msg || !msg.linhas || !msg.linhas.length\" style=\"padding:12px;background:#f4f7f5;border-radius:8px;\">Nenhuma leitura armazenada ainda.</div>\n  <div ng-if=\"msg && msg.linhas && msg.linhas.length\" style=\"max-height:320px;overflow:auto;\">\n    <table style=\"width:100%;border-collapse:collapse;font-size:12px;\">\n      <thead>\n        <tr style=\"text-align:left;color:#0f3d2e;\">\n          <th style=\"padding:4px;white-space:nowrap;\">Hora</th>\n          <th style=\"padding:4px;\">Solo</th>\n          <th style=\"padding:4px;\">Ar</th>\n          <th style=\"padding:4px;\">Umid.</th>\n          <th style=\"padding:4px;\">Fumaça</th>\n          <th style=\"padding:4px;\">Risco</th>\n          <th style=\"padding:4px;\">Origem</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr ng-repeat=\"linha in msg.linhas\" style=\"border-top:1px solid #e1ebe4;\">\n          <td style=\"padding:4px;white-space:nowrap;\">{{linha.hora}}</td>\n          <td style=\"padding:4px;\">{{linha.temperatura_solo}}</td>\n          <td style=\"padding:4px;\">{{linha.temperatura_ambiente}}</td>\n          <td style=\"padding:4px;\">{{linha.umidade}}</td>\n          <td style=\"padding:4px;\">{{linha.fumaca}}</td>\n          <td style=\"padding:4px;font-weight:700;white-space:nowrap;\" ng-style=\"{color:linha.cor}\">{{linha.risco}}</td>\n          <td style=\"padding:4px;\">{{linha.origem}}</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n</div>\n",
+    "storeOutMessages": true,
+    "fwdInMessages": true,
+    "resendOnRefresh": true,
+    "templateScope": "local",
+    "className": "",
+    "x": 460,
+    "y": 860,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "c0c0a1e00000003e",
+    "type": "ui_template",
+    "z": "c0c0a1e000000001",
+    "group": "c0c0a1e00000000f",
+    "name": "Ocorrências",
+    "order": 1,
+    "width": 12,
+    "height": 6,
+    "format": "<div style=\"font-family:Segoe UI,Roboto,sans-serif;color:#143028;\">\n  <div style=\"font-size:13px;margin-bottom:8px;\">Mudanças de classificação: <strong>{{msg.total || 0}}</strong>.</div>\n  <div ng-if=\"!msg || !msg.linhas || !msg.linhas.length\" style=\"padding:12px;background:#f4f7f5;border-radius:8px;\">Nenhuma mudança registrada ainda.</div>\n  <div ng-if=\"msg && msg.linhas && msg.linhas.length\" style=\"max-height:240px;overflow:auto;\">\n    <table style=\"width:100%;border-collapse:collapse;font-size:13px;\">\n      <thead>\n        <tr style=\"text-align:left;color:#0f3d2e;\">\n          <th style=\"padding:4px;\">Hora</th>\n          <th style=\"padding:6px;\">De</th>\n          <th style=\"padding:6px;\">Para</th>\n          <th style=\"padding:6px;\">Solo</th>\n          <th style=\"padding:6px;\">Ambiente</th>\n          <th style=\"padding:6px;\">Umidade</th>\n          <th style=\"padding:6px;\">Fumaça</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr ng-repeat=\"linha in msg.linhas\" style=\"border-top:1px solid #e1ebe4;\">\n          <td style=\"padding:4px;white-space:nowrap;\">{{linha.hora}}</td>\n          <td style=\"padding:6px;\">{{linha.risco_anterior}}</td>\n          <td style=\"padding:6px;font-weight:700;\" ng-style=\"{color:linha.cor}\">{{linha.risco}}</td>\n          <td style=\"padding:6px;\">{{linha.temperatura_solo}}</td>\n          <td style=\"padding:6px;\">{{linha.temperatura_ambiente}}</td>\n          <td style=\"padding:6px;\">{{linha.umidade}}</td>\n          <td style=\"padding:6px;\">{{linha.fumaca}}</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n</div>\n",
+    "storeOutMessages": true,
+    "fwdInMessages": true,
+    "resendOnRefresh": true,
+    "templateScope": "local",
+    "className": "",
+    "x": 720,
+    "y": 860,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "c0c0a1e00000003f",
+    "type": "ui_text",
+    "z": "c0c0a1e000000001",
+    "group": "c0c0a1e00000000e",
+    "order": 2,
+    "width": 12,
+    "height": 1,
+    "name": "Total de leituras",
+    "label": "Leituras armazenadas",
+    "format": "{{msg.payload}}",
+    "layout": "row-spread",
+    "className": "",
+    "style": false,
+    "font": "",
+    "fontSize": 16,
+    "color": "#143028",
+    "x": 980,
+    "y": 860,
+    "wires": []
+  },
+  {
+    "id": "c0c0a1e000000046",
+    "type": "file",
+    "z": "c0c0a1e000000001",
+    "name": "Acrescentar leitura ao CSV",
+    "filename": "filename",
+    "filenameType": "msg",
+    "appendNewline": true,
+    "createDir": true,
+    "overwriteFile": "false",
+    "encoding": "utf8",
+    "x": 1120,
+    "y": 640,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "c0c0a1e000000047",
+    "type": "debug",
+    "z": "c0c0a1e000000001",
+    "name": "Leitura validada",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 1120,
+    "y": 720,
+    "wires": []
+  },
+  {
+    "id": "c0c0a1e000000048",
+    "type": "debug",
+    "z": "c0c0a1e000000001",
+    "name": "Falha no fluxo",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 400,
+    "y": 720,
+    "wires": []
+  },
+  {
+    "id": "c0c0a1e000000050",
+    "type": "comment",
+    "z": "c0c0a1e000000001",
+    "name": "Entrada MQTT",
+    "info": "Os tres topicos de entrada usam o mesmo broker configurado em config.py do firmware.",
+    "x": 150,
+    "y": 80,
+    "wires": []
+  },
+  {
+    "id": "c0c0a1e000000051",
+    "type": "comment",
+    "z": "c0c0a1e000000001",
+    "name": "Regras e registro",
+    "info": "A classificacao local usa a mesma regra do firmware. O painel mostra o risco enviado pela estacao, que e o risco que aciona LED e buzzer.",
+    "x": 700,
+    "y": 80,
+    "wires": []
+  }
+]

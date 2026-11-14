@@ -1,0 +1,18 @@
+{
+  "descricao": "Parametros experimentais da simulacao do Coco Alerta. Nao sao limites oficiais de seguranca ambiental nem limiares de um detector certificado.",
+  "persistencia_leituras": 2,
+  "limites": {
+    "temperatura_solo_atencao": 35,
+    "temperatura_solo_alerta": 42,
+    "temperatura_solo_emergencia": 50,
+    "temperatura_ambiente_atencao": 36,
+    "temperatura_ambiente_alerta": 40,
+    "temperatura_ambiente_emergencia": 45,
+    "umidade_atencao": 40,
+    "umidade_alerta": 30,
+    "umidade_emergencia": 25,
+    "fumaca_atencao": 1000,
+    "fumaca_alerta": 1800,
+    "fumaca_emergencia": 2800
+  }
+}

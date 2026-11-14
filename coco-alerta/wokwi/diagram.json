@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "author": "Coco Alerta",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 86,
+      "left": 268,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-ds18b20",
+      "id": "solo",
+      "top": -10,
+      "left": 28,
+      "attrs": { "temperature": "27" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rpull",
+      "top": 72,
+      "left": 168,
+      "rotate": 90,
+      "attrs": { "value": "4700" }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht",
+      "top": 300,
+      "left": 8,
+      "attrs": { "temperature": "31", "humidity": "68" }
+    },
+    {
+      "type": "wokwi-gas-sensor",
+      "id": "mq2",
+      "top": 150,
+      "left": -210,
+      "attrs": { "ppm": "200" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rverde",
+      "top": 40,
+      "left": 560,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledverde",
+      "top": -20,
+      "left": 640,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "ramarelo",
+      "top": 160,
+      "left": 560,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledamarelo",
+      "top": 100,
+      "left": 640,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rvermelho",
+      "top": 280,
+      "left": 560,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledvermelho",
+      "top": 220,
+      "left": 640,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzzer",
+      "top": 360,
+      "left": 620,
+      "attrs": { "mode": "smooth", "volume": "0.2" }
+    }
+  ],
+  "connections": [
+    ["esp:TX", "$serialMonitor:RX", "", []],
+    ["esp:RX", "$serialMonitor:TX", "", []],
+    ["esp:3V3", "solo:VCC", "red", ["h-20", "v-80"]],
+    ["esp:GND.1", "solo:GND", "black", ["h-30", "v-40"]],
+    ["esp:D4", "solo:DQ", "green", ["h-10", "v-20"]],
+    ["solo:DQ", "rpull:1", "green", []],
+    ["rpull:2", "esp:3V3", "red", []],
+    ["esp:3V3", "dht:VCC", "red", ["h-40", "v180"]],
+    ["esp:GND.1", "dht:GND", "black", ["h-50", "v160"]],
+    ["esp:D14", "dht:SDA", "green", ["h-16", "v140"]],
+    ["esp:3V3", "mq2:VCC", "red", ["h-80", "v40"]],
+    ["esp:GND.1", "mq2:GND", "black", ["h-90", "v60"]],
+    ["esp:D34", "mq2:AOUT", "orange", ["h-70", "v20"]],
+    ["esp:D25", "rverde:1", "green", []],
+    ["rverde:2", "ledverde:A", "green", []],
+    ["ledverde:C", "esp:GND.2", "black", []],
+    ["esp:D26", "ramarelo:1", "gold", []],
+    ["ramarelo:2", "ledamarelo:A", "gold", []],
+    ["ledamarelo:C", "esp:GND.2", "black", []],
+    ["esp:D27", "rvermelho:1", "red", []],
+    ["rvermelho:2", "ledvermelho:A", "red", []],
+    ["ledvermelho:C", "esp:GND.2", "black", []],
+    ["esp:D32", "buzzer:2", "purple", []],
+    ["buzzer:1", "esp:GND.2", "black", []]
+  ],
+  "dependencies": {}
+}

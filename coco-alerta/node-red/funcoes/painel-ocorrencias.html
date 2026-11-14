@@ -1,0 +1,30 @@
+<div style="font-family:Segoe UI,Roboto,sans-serif;color:#143028;">
+  <div style="font-size:13px;margin-bottom:8px;">Mudanças de classificação: <strong>{{msg.total || 0}}</strong>.</div>
+  <div ng-if="!msg || !msg.linhas || !msg.linhas.length" style="padding:12px;background:#f4f7f5;border-radius:8px;">Nenhuma mudança registrada ainda.</div>
+  <div ng-if="msg && msg.linhas && msg.linhas.length" style="max-height:240px;overflow:auto;">
+    <table style="width:100%;border-collapse:collapse;font-size:13px;">
+      <thead>
+        <tr style="text-align:left;color:#0f3d2e;">
+          <th style="padding:4px;">Hora</th>
+          <th style="padding:6px;">De</th>
+          <th style="padding:6px;">Para</th>
+          <th style="padding:6px;">Solo</th>
+          <th style="padding:6px;">Ambiente</th>
+          <th style="padding:6px;">Umidade</th>
+          <th style="padding:6px;">Fumaça</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="linha in msg.linhas" style="border-top:1px solid #e1ebe4;">
+          <td style="padding:4px;white-space:nowrap;">{{linha.hora}}</td>
+          <td style="padding:6px;">{{linha.risco_anterior}}</td>
+          <td style="padding:6px;font-weight:700;" ng-style="{color:linha.cor}">{{linha.risco}}</td>
+          <td style="padding:6px;">{{linha.temperatura_solo}}</td>
+          <td style="padding:6px;">{{linha.temperatura_ambiente}}</td>
+          <td style="padding:6px;">{{linha.umidade}}</td>
+          <td style="padding:6px;">{{linha.fumaca}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

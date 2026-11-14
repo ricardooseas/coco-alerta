@@ -1,0 +1,7 @@
+.DS_Store
+.venv/
+_fonte/
+_verificacao/
+__pycache__/
+*.pyc
+CocoAlerta-para-gravar-video.zip
