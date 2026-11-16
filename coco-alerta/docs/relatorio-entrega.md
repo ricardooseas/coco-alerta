@@ -9,7 +9,7 @@ O protótipo é experimental. Ele apoia a demonstração do monitoramento. Não 
 Arquivos principais:
 
 - `wokwi/diagram.json` e `wokwi/wokwi.toml`: ESP32 DevKit C V4, DS18B20 no GPIO 4, DHT22 no GPIO 14, MQ-2 no GPIO 34, LEDs nos GPIO 25, 26 e 27, buzzer no GPIO 32.
-- `wokwi/main.py`, `sensors.py`, `actuators.py`, `mqtt_client.py`, `risk_engine.py`, `config.py` e `umqtt/simple.py`: firmware MicroPython.
+- `wokwi/main.py`, `sensors.py`, `actuators.py`, `mqtt_client.py`, `risk_engine.py`, `config.py` e `umqtt_simple.py`: firmware MicroPython. O editor do Wokwi não cria pastas, então o cliente MQTT fica nesse arquivo único.
 - `node-red/flows.json`: fluxo importável no Node-RED 4.0.9 com `node-red-dashboard` 3.6.5.
 - `shared/limites.json`: limites experimentais usados pelo firmware e pelo fluxo.
 - `data/readings.csv`: 24 leituras de teste.
@@ -20,7 +20,7 @@ Arquitetura efetivamente montada: os sensores alimentam o ESP32; o firmware clas
 
 ## B. Execução
 
-1. Criar um projeto MicroPython ESP32 no Wokwi e colar os arquivos de `wokwi/`, inclusive a pasta `umqtt/`.
+1. Criar um projeto MicroPython ESP32 no Wokwi e colar os arquivos de `wokwi/`, inclusive `umqtt_simple.py`. Não crie a pasta `umqtt/`.
 2. Iniciar a simulação. O Wi-Fi do simulador é `Wokwi-GUEST`, sem senha.
 3. Em outro terminal, na pasta `coco-alerta`, executar `zsh tools/iniciar-node-red.sh`.
 4. Importar `node-red/flows.json` e implantar.

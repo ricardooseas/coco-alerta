@@ -67,13 +67,12 @@ coco-alerta/
    - `risk_engine.py`
    - `mqtt_client.py`
    - `limites.json`
-   - `umqtt/__init__.py`
-   - `umqtt/simple.py`
+   - `umqtt_simple.py`
 4. Inicie a simulação. O monitor serial precisa estar ligado. As mensagens `print` aparecem nesse console.
 5. A rede simulada já oferece o Wi-Fi `Wokwi-GUEST`, sem senha. Esse nome só existe dentro do Wokwi. Está em `wokwi/config.py`.
 6. O firmware publica em `broker.hivemq.com`. O Node-RED precisa usar o mesmo broker, como já está em `node-red/flows.json`.
 
-Os valores iniciais do diagrama ficam na faixa normal: solo 27 °C, ar 31 °C, umidade 68% e MQ-2 em 200 ppm. Clique em cada sensor durante a simulação para mover o controle e mudar a leitura.
+Solo 27 °C, ar 31 °C e umidade 68% começam na faixa normal. No MQ-2, baixe o ppm até o serial mostrar `fumaca` abaixo de 1000. Clique em cada sensor durante a simulação para mover o controle e mudar a leitura.
 
 Se for usar a extensão Wokwi no VS Code ou o `wokwi-cli`, baixe o firmware `ESP32_GENERIC` em [micropython.org/download/ESP32_GENERIC](https://micropython.org/download/ESP32_GENERIC/) e acrescente em `wokwi/wokwi.toml`:
 

@@ -28,7 +28,7 @@ Resultado esperado: conectar, assinar, publicar e receber uma mensagem no broker
 
 Resultado obtido: a mensagem publicada foi recebida pelo mesmo cliente.
 
-Situação: aprovado para o cliente `wokwi/umqtt/simple.py` em CPython. O ESP32 simulado ainda não publicou.
+Situação: aprovado para o cliente `wokwi/umqtt/simple.py` em CPython. No editor do Wokwi a estação usa `wokwi/umqtt_simple.py` e publicou no broker.
 
 Evidência: saída do comando, com o broker `broker.hivemq.com`.
 
