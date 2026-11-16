@@ -57,20 +57,9 @@ coco-alerta/
 
 ## Abrir o circuito no Wokwi
 
-1. Crie um projeto ESP32 com MicroPython em [wokwi.com/projects/new/micropython-esp32](https://wokwi.com/projects/new/micropython-esp32).
-2. Substitua o conteúdo de `diagram.json` pelo arquivo `wokwi/diagram.json`.
-3. No editor de arquivos do Wokwi, crie e cole, com os mesmos nomes:
-   - `main.py`
-   - `config.py`
-   - `sensors.py`
-   - `actuators.py`
-   - `risk_engine.py`
-   - `mqtt_client.py`
-   - `limites.json`
-   - `umqtt_simple.py`
-4. Inicie a simulação. O monitor serial precisa estar ligado. As mensagens `print` aparecem nesse console.
-5. A rede simulada já oferece o Wi-Fi `Wokwi-GUEST`, sem senha. Esse nome só existe dentro do Wokwi. Está em `wokwi/config.py`.
-6. O firmware publica em `broker.hivemq.com`. O Node-RED precisa usar o mesmo broker, como já está em `node-red/flows.json`.
+O circuito já está publicado em [wokwi.com/projects/480798533237992449](https://wokwi.com/projects/480798533237992449). Abra esse endereço e inicie a simulação. O monitor serial precisa estar ligado. As mensagens `print` aparecem nesse console.
+
+A rede simulada já oferece o Wi-Fi `Wokwi-GUEST`, sem senha. Esse nome só existe dentro do Wokwi. Está em `wokwi/config.py`. O firmware publica em `broker.hivemq.com`. O Node-RED precisa usar o mesmo broker, como já está em `node-red/flows.json`.
 
 Solo 27 °C, ar 31 °C e umidade 68% começam na faixa normal. No MQ-2, baixe o ppm até o serial mostrar `fumaca` abaixo de 1000. Clique em cada sensor durante a simulação para mover o controle e mudar a leitura.
 

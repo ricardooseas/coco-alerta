@@ -20,12 +20,11 @@ Arquitetura efetivamente montada: os sensores alimentam o ESP32; o firmware clas
 
 ## B. Execução
 
-1. Criar um projeto MicroPython ESP32 no Wokwi e colar os arquivos de `wokwi/`, inclusive `umqtt_simple.py`. Não crie a pasta `umqtt/`.
-2. Iniciar a simulação. O Wi-Fi do simulador é `Wokwi-GUEST`, sem senha.
-3. Em outro terminal, na pasta `coco-alerta`, executar `zsh tools/iniciar-node-red.sh`.
-4. Importar `node-red/flows.json` e implantar.
-5. Abrir o painel em `http://127.0.0.1:1880/ui/`.
-6. Mover os controles dos sensores. A subida de classificação aparece na segunda leitura igual. O intervalo padrão é 5 segundos.
+1. Abrir o circuito já publicado em https://wokwi.com/projects/480798533237992449 e iniciar a simulação. O Wi-Fi do simulador é `Wokwi-GUEST`, sem senha.
+2. Em outro terminal, na pasta `coco-alerta`, executar `zsh tools/iniciar-node-red.sh`.
+3. Importar `node-red/flows.json` e implantar.
+4. Abrir o painel em `http://127.0.0.1:1880/ui/`.
+5. Mover os controles dos sensores. A subida de classificação aparece na segunda leitura igual. O intervalo padrão é 5 segundos.
 
 O passo a passo completo está no `README.md`.
 
