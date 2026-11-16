@@ -2,7 +2,7 @@ import json
 import time
 
 import config
-from umqtt.simple import MQTTClient
+from umqtt_simple import MQTTClient
 
 
 def _id_cliente():
